@@ -3,7 +3,7 @@
 <head>
     <meta chatset=""UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Style/styles.css">
     <title>STK TV Program</title>
 </head>
 
@@ -16,26 +16,32 @@
     <main>
         <form id = "programForm">
         <label for="programTitle">Titel:</label>
-        <input type="text" id="programTitle" required>
+        <input type="text" id="programTitle" aria-label="Titel på TV-programmet" required>
         
-        <label for="programBeskrivning">Beskrivning:</label>
-        <textarea id="programBeskrivning" required></textarea>
+        <label for="programDescription">Beskrivning:</label>
+        <textarea id="programDescription" aria-label="Beskrivning av TV-programmet" required></textarea>
 
         <label for="ageLimit">Åldersgräns:</label>
-        <input type="number" id="ageLimit" required>
+        <input type="number" id="ageLimit" aria-label="Åldersgräns för TV-programmet" required>
 
-        <button type="button" onclick="addProgram()">Lägg till program</button>
+        <button type="button" onclick="addProgram()" aria-label="Lägg till program">Lägg till program</button>
         </form>
+
+        <button onclick="listAllPrograms()" aria-label="Visa alla program">Visa alla sparade program</button>
+
+        <ul id = "programList" aria-live="polite" aria-atomic="true"></ul>
+
+        <button onclick="clearPrograms()">Rensa listan</button>
 
         <div>
             <label for="searchProgram">Sök program:</label>
-            <input type="text" id="searchProgram" oninput="searchPrograms()">
+            <input type="text" id="searchProgram" oninput="searchPrograms()" aria-label="Sök TV-program">
         </div>
 
         <ul id="programList"></ul>
     </main>
 
-    <script src="script.js"></script>
+    <script src="Scripts/scripts.js"></script>
 
 
 </body>
