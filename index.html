@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta chatset=""UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>STK TV Program</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>STK TV Program</h1>
+    </header>
+
+    <main>
+        <form id = "programForm">
+        <label for="programTitle">Titel:</label>
+        <input type="text" id="programTitle" required>
+        
+        <label for="programBeskrivning">Beskrivning:</label>
+        <textarea id="programBeskrivning" required></textarea>
+
+        <label for="ageLimit">Åldersgräns:</label>
+        <input type="number" id="ageLimit" required>
+
+        <button type="button" onclick="addProgram()">Lägg till program</button>
+        </form>
+
+        <div>
+            <label for="searchProgram">Sök program:</label>
+            <input type="text" id="searchProgram" oninput="searchPrograms()">
+        </div>
+
+        <ul id="programList"></ul>
+    </main>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
