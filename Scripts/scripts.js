@@ -18,9 +18,9 @@ function addProgram() {
 var programs = JSON.parse(localStorage.getItem("programs")) || [];
 
 
-programs.push(newProgram);
+programs.push(newProgram); //lägger till data med push.
 
-localStorage.setItem("programs", JSON.stringify(programs));
+localStorage.setItem("programs", JSON.stringify(programs)); //Gör om datan till en sträng och sparar.
 loadPrograms();
 document.getElementById("programForm").reset();
 }
@@ -65,6 +65,7 @@ function listAllPrograms() {
 
 function clearPrograms() {
     localStorage.removeItem('programs');
+    alert ("All data är rensad!");
 
     loadPrograms();
 }
