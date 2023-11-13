@@ -10,34 +10,33 @@
 <body>
 
     <header>
-        <h1>STK TV Program</h1>
+        <h1>STK Filmer & Program</h1>
     </header>
 
     <main>
         
         <form id = "programForm">
         <label for="programTitle">Titel:</label>
-        <input type="text" id="programTitle" aria-label="Titel på TV-programmet" required>
+        <input type="text" id="programTitle" aria-label="Titel på TV-programmet" placeholder="Skriv in titeln" required>
         
         <label for="programDescription">Beskrivning:</label>
-        <textarea id="programDescription" aria-label="Beskrivning av TV-programmet" required></textarea>
+        <textarea id="programDescription" aria-label="Beskrivning av TV-programmet" placeholder="Skriv en beskrivning"  required></textarea>
 
         <label for="ageLimit">Åldersgräns:</label>
-        <input type="number" id="ageLimit" aria-label="Åldersgräns för TV-programmet" required>
+        <input type="number" id="ageLimit" aria-label="Åldersgräns för TV-programmet" placeholder="Åldersgräns" required>
 
         <button type="button" onclick="addProgram()" aria-label="Lägg till program">Lägg till program</button>
         </form>
-
-        <button onclick="listAllPrograms()" aria-label="Visa alla program">Visa alla sparade program</button>
-
+        <label for="searchProgram">Sök program:</label>
+        <input type="text" id="searchBox" oninput="searchPrograms()" aria-label="Sök TV-program" placeholder="Sök...">
+        
+        
         <ul id = "programList" aria-live="polite" aria-atomic="true"></ul>
 
         <button onclick="clearPrograms()">Rensa listan</button>
 
-        <div>
-            <label for="searchProgram">Sök program:</label>
-            <input type="text" id="searchProgram" oninput="searchPrograms()" aria-label="Sök TV-program">
-        </div>
+        
+        
 
         <ul id="programList"></ul>
     </main>

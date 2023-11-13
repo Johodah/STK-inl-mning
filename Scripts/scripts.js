@@ -3,7 +3,6 @@ loadPrograms();
 });
 
 function addProgram() {
-    console.log('Lägger till program');
     var title = document.getElementById('programTitle').value;
     var description = document.getElementById('programDescription').value;
     var ageLimit = document.getElementById('ageLimit').value;
@@ -40,27 +39,28 @@ function loadPrograms() {
 }
 
 function searchPrograms() {
-    var searchInput = document.getElementById("searchProgram").value.toLowerCase();
+    const searchQuery = document.getElementById('searchBox').value.toLowerCase();
+    const programs = JSON.parse(localStorage.getItem("programs")) || [];
+
     var programList = document.getElementById("programList");
-
-    var programs = JSON.parse(localStorage.getItem("programs")) || [];
-
-    var filteredPrograms = programs.filter(function (program) {
-        return program.title.toLowerCase(),includes(searchInput) || program.description.toLowerCase(),includes(searchInput);  
-    });
-}
-
-function listAllPrograms() {
-    var programList = document.getElementById("programList");
-
-    var programs = JSON.parse(localStorage.getItem("programs")) || [];
-
     programList.innerHTML = '';
-    programs.forEach(function (program) {
-        var li = document.createElement('li');
-        li.innerHTML = `<strong>${program.title}</strong> (${program.ageLimit}+) - ${program.description}`;
-        programList.appendChild(li);
+
+    if (searchQuery.trim() === '') {
+        loadPrograms();
+        return;
+    }
+
+    const filteredPrograms = programs.filter(program => {
+        return program.title.toLowerCase().includes(searchQuery) || 
+               program.description.toLowerCase().includes(searchQuery) ||
+               program.ageLimit.toString().includes(searchQuery);  
     });
+
+filteredPrograms.forEach(program => {
+    var li = document.createElement("li");
+    li.innerHTML = `<strong>${program.title}</strong> (${program.ageLimit}+) - ${program.description}`;
+        programList.appendChild(li);
+});
 }
 
 function clearPrograms() {

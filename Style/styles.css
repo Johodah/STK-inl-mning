@@ -5,6 +5,7 @@ body {
   background-image: url("/Media/geoffrey-moffett-TFRezw7pQwI-unsplash.jpg");
   background-position: center;
   background-size: cover;
+  color: #ddd;
 }
 
 header {
@@ -15,13 +16,14 @@ header {
 }
 
 main {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 200px;
+  margin: 50px auto;
+  padding: 30px;
 }
 main label {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: block;
+  color: yellow;
 }
 main form {
   margin-bottom: 20px;
@@ -29,11 +31,12 @@ main form {
 main ul {
   list-style: none;
   padding: 0;
+  background-color: white;
+  color: black;
 }
 main li {
   margin-bottom: 10px;
   padding: 10px;
-  border: 2px solid #ddd;
 }
 main input, main textarea, main button {
   width: 100%;
