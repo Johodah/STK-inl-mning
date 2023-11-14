@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta chatset=""UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/styles.css">
     <title>STK TV Program</title>
@@ -14,26 +14,32 @@
     </header>
 
     <main>
-        
+        <!-- Formulär för att lägga till ett nytt program-->
         <form id = "programForm">
-        <label for="programTitle">Titel:</label>
-        <input type="text" id="programTitle" aria-label="Titel på TV-programmet" placeholder="Skriv in titeln" required>
+            <label for="programTitle">Titel:</label>
+            <input type="text" id="programTitle" aria-label="Titel på TV-programmet" placeholder="Skriv in titeln" required>
         
-        <label for="programDescription">Beskrivning:</label>
-        <textarea id="programDescription" aria-label="Beskrivning av TV-programmet" placeholder="Skriv en beskrivning"  required></textarea>
+            <label for="programDescription">Beskrivning:</label>
+            <textarea id="programDescription" aria-label="Beskrivning av TV-programmet" placeholder="Skriv en beskrivning"  required></textarea>
 
-        <label for="ageLimit">Åldersgräns:</label>
-        <input type="number" id="ageLimit" aria-label="Åldersgräns för TV-programmet" placeholder="Åldersgräns" required>
+            <label for="ageLimit">Åldersgräns:</label>
+            <input type="number" id="ageLimit" aria-label="Åldersgräns för TV-programmet" placeholder="Åldersgräns" required>
 
-        <button id="clearButton" onclick="clearPrograms()">Rensa listan</button>
+            <button id="clearButton" onclick="clearPrograms()">Rensa listan</button>
 
-        <button type="button" onclick="addProgram()" aria-label="Lägg till program">Lägg till program</button>
+            <button type="button" onclick="addProgram()" aria-label="Lägg till program">Lägg till program</button>
         </form>
 
+        <!-- Skapar en möjlighet att söka efter program-->
         <label for="searchProgram">Sök program:</label>
         <input type="text" id="searchBox" oninput="searchPrograms()" aria-label="Sök TV-program" placeholder="Sök...">
         
-        <div id="savedProgramsContainer" class ="program-list" aria-live="polite" aria-atomic="true"></div>
+        <!--Container som sparar programmen och knappar för att kunna scrolla åt vänster och höger-->
+        <div id="savedProgramsContainer" class ="program-list" aria-live="polite" aria-atomic="true">
+            <button class ="scroll-arrow left" onclick="scrollPrograms('left')">Left</button>
+
+            <button class="scroll-arrow Right" onclick="scrollPrograms('right')">Right</button>
+        </div>
 
     </main>
 

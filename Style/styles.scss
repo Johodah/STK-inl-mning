@@ -43,10 +43,25 @@ form {
 
     #savedProgramsContainer {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        justify-content: flex-start;
+        padding: 10px;
+        margin: 0;
     }
+    
+    .saved-program {
+    flex: 0 0 auto;
+    width: 50%;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    scroll-snap-align: start;
+    
+}
 
     #programList {
     list-style: none;
@@ -70,16 +85,32 @@ button {
     }
 }
 
-
-
-.saved-program {
-    width: calc(50% - 20px);
-    margin: 10px;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    text-align: left;
+.scroll-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
 }
+
+.scroll-list {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+
+.scroll-arrow {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
 
     #programForm {
     display: flex;
