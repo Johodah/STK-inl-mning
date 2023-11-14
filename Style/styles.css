@@ -18,27 +18,70 @@ header {
 main {
   max-width: 200px;
   margin: 50px auto;
-  padding: 30px;
+  text-align: center;
 }
-main label {
+main form {
+  margin-bottom: 20px;
+  border-top-left-radius: 100%;
+}
+main form label {
   margin-bottom: 10px;
   display: block;
   color: yellow;
 }
-main form {
-  margin-bottom: 20px;
+main form input, main form textarea, main form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
 }
-main ul {
+main #savedProgramsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+main ul #programList {
   list-style: none;
   padding: 0;
-  background-color: white;
-  color: black;
+  margin: 0;
 }
-main li {
-  margin-bottom: 10px;
+main ul #programList li {
+  margin-bottom: 30px;
   padding: 10px;
 }
-main input, main textarea, main button {
+main button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.saved-program {
+  width: calc(50% - 20px);
+  margin: 10px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: left;
+}
+
+#programForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#programForm label {
+  margin-bottom: 5px;
+  display: block;
+  color: yellow;
+}
+#programForm input, #programForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+#programForm button {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;

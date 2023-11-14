@@ -7,6 +7,16 @@ function addProgram() {
     var description = document.getElementById('programDescription').value;
     var ageLimit = document.getElementById('ageLimit').value;
 
+    if (title.trim() === '' || description.trim() === '' || ageLimit.trim() === '') {
+        alert("Fyll i alla fält innan du lägger till ett program.");
+        return;
+    }
+
+    if (!(/^\d+$/.test(ageLimit)) || parseInt(ageLimit) < 0) {
+        alert("Apapap! Åldersgränsen måste vara positivt tal, toker.");
+        return;
+    }
+
     var newProgram = {
         title: title,
         description: description,
@@ -15,8 +25,6 @@ function addProgram() {
 
 
 var programs = JSON.parse(localStorage.getItem("programs")) || [];
-
-
 programs.push(newProgram); //lägger till data med push.
 
 localStorage.setItem("programs", JSON.stringify(programs)); //Gör om datan till en sträng och sparar.
@@ -26,15 +34,16 @@ document.getElementById("programForm").reset();
 
 
 function loadPrograms() {
-    var programList = document.getElementById("programList");
-    programList.innerHTML = '';
+    var savedProgramsContainer = document.getElementById("savedProgramsContainer");
+    savedProgramsContainer.innerHTML = '';
 
     var programs = JSON.parse(localStorage.getItem("programs")) || [];
 
     programs.forEach(function (program) {
-        var li = document.createElement("li");
-        li.innerHTML = `<strong>${program.title}</strong> (${program.ageLimit}+) - ${program.description}`;
-        programList.appendChild(li);
+        var div = document.createElement("div");
+        div.className = "saved-program";
+        div.innerHTML = `<strong>${program.title}</strong> (${program.ageLimit}+) - ${program.description}`;
+        savedProgramsContainer.appendChild(div);
     });
 }
 
