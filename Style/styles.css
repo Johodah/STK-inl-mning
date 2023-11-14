@@ -5,6 +5,7 @@ body {
   background-image: url("/Media/geoffrey-moffett-TFRezw7pQwI-unsplash.jpg");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   color: #ddd;
 }
 
@@ -28,6 +29,8 @@ main form label {
   margin-bottom: 10px;
   display: block;
   color: yellow;
+  background-color: #333;
+  padding: 5px 10px;
 }
 main form input, main form textarea, main form button {
   width: 100%;
@@ -38,13 +41,14 @@ main #savedProgramsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: flex-start;
 }
-main ul #programList {
+main #programList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-main ul #programList li {
+main #programList li {
   margin-bottom: 30px;
   padding: 10px;
 }
@@ -70,6 +74,7 @@ main button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 #programForm label {
   margin-bottom: 5px;
@@ -85,4 +90,16 @@ main button {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
+}
+#programForm #clearButton {
+  position: absolute;
+  top: 25px;
+  left: 130%;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  width: auto;
 }/*# sourceMappingURL=styles.css.map */

@@ -25,18 +25,15 @@
         <label for="ageLimit">Åldersgräns:</label>
         <input type="number" id="ageLimit" aria-label="Åldersgräns för TV-programmet" placeholder="Åldersgräns" required>
 
+        <button id="clearButton" onclick="clearPrograms()">Rensa listan</button>
+
         <button type="button" onclick="addProgram()" aria-label="Lägg till program">Lägg till program</button>
         </form>
 
         <label for="searchProgram">Sök program:</label>
         <input type="text" id="searchBox" oninput="searchPrograms()" aria-label="Sök TV-program" placeholder="Sök...">
         
-        <div id="savedProgramsContainer" class ="program-list"></div>
-
-        <ul id = "programList" aria-live="polite" aria-atomic="true"></ul>
-
-        <button onclick="clearPrograms()">Rensa listan</button>
-
+        <div id="savedProgramsContainer" class ="program-list" aria-live="polite" aria-atomic="true"></div>
 
     </main>
 

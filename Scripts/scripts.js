@@ -13,7 +13,7 @@ function addProgram() {
     }
 
     if (!(/^\d+$/.test(ageLimit)) || parseInt(ageLimit) < 0) {
-        alert("Apapap! Åldersgränsen måste vara positivt tal, toker.");
+        alert("Apapapp! Åldersgränsen måste vara positivt tal, toker.");
         return;
     }
 
@@ -51,8 +51,8 @@ function searchPrograms() {
     const searchQuery = document.getElementById('searchBox').value.toLowerCase();
     const programs = JSON.parse(localStorage.getItem("programs")) || [];
 
-    var programList = document.getElementById("programList");
-    programList.innerHTML = '';
+    var savedProgramsContainer = document.getElementById("savedProgramsContainer");
+    savedProgramsContainer.innerHTML = '';
 
     if (searchQuery.trim() === '') {
         loadPrograms();
@@ -66,9 +66,10 @@ function searchPrograms() {
     });
 
 filteredPrograms.forEach(program => {
-    var li = document.createElement("li");
-    li.innerHTML = `<strong>${program.title}</strong> (${program.ageLimit}+) - ${program.description}`;
-        programList.appendChild(li);
+    var div = document.createElement("div");
+    div.innerHTML = `<strong>${program.title}</strong> (${program.ageLimit}+) - ${program.description}`;
+    div.className = "saved-program";
+    savedProgramsContainer.appendChild(div); 
 });
 }
 
