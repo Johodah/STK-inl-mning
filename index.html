@@ -31,12 +31,12 @@
         </form>
 
         <!-- Skapar en möjlighet att söka efter program-->
-        <label for="searchProgram">Sök program:</label>
-        <input type="text" id="searchBox" oninput="searchPrograms()" aria-label="Sök TV-program" placeholder="Sök...">
+        <label for="searchProgram" role="search" aria-labelledby="searchLabel">Sök program:</label>
+        <input type="text" id="searchBox" oninput="searchPrograms()" aria-label="Sök TV-program" placeholder="Sök..." role="searchbox" aria-haspopup="listbox">
         
         <!--Container som sparar programmen och knappar för att kunna scrolla åt vänster och höger-->
-        <div id="savedProgramsContainer" class ="program-list" aria-live="polite" aria-atomic="true">
-            <button class ="scroll-arrow left" onclick="scrollPrograms('left')">Left</button>
+        <div id="savedProgramsContainer" class ="program-list" role="button" aria-label="Scrolla vänster" aria-live="polite" aria-atomic="true">
+            <button class ="scroll-arrow left" onclick="scrollPrograms('left')" role="button" aria-label="Scrolla höger">Left</button>
 
             <button class="scroll-arrow Right" onclick="scrollPrograms('right')">Right</button>
         </div>
@@ -45,6 +45,9 @@
 
     <script src="Scripts/scripts.js"></script>
 
+    <div id="updateStatusContainer">
+        <p id="updateStatus">Senast uppdaterad:[Datum och tid]</p>
+    </div>
 
 </body>
 </html>
