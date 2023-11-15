@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
 loadPrograms();
 });
 
+
+
+
 function addProgram() {
     //Den här funktionen hämtar värden från formuläret som skapats.
     var title = document.getElementById('programTitle').value;
@@ -129,4 +132,3 @@ document.querySelector(".scroll-button.right").addEventListener("click", functio
     var savedProgramsContainer = document.getElementById("savedProgramsContainer");
     savedProgramsContainer.scrollLeft += savedProgramsContainer.scrollWidth;
 });
-
